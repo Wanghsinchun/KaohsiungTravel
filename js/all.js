@@ -60,7 +60,7 @@ function init(e) {
     let initLen = storageinitAry.length;
     for (let i = 0; i < initLen; i++) {
         let e = storageinitAry[i].datanum;
-        content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '"></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
+        content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '"></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
     }
     list.innerHTML = content;
 
@@ -87,14 +87,14 @@ function filter(e) {
         // 如果使用者沒有選擇區域，就將所有景點放到 content 中
         for (let i = 0; i < initLen; i++) {
             let e = storageinitAry[i].datanum;
-            content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '"></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
+            content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '"></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
         }
     } else {
         // 如果使用者有選擇區域，就只顯示對應區域的景點
         for (let i = 0; i < initLen; i++) {
             if (select == storageinitAry[i].Zipcode) {
                 let e = storageinitAry[i].datanum;
-                content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '"></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
+                content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '"></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
             }
         }
     }
@@ -195,7 +195,7 @@ function callFavo() {
     let content = '';
     for (let i = 0; i < Len; i++) {
         let e = favoData[i].datanum;
-        content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '" style="background-color:red";></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
+        content += '<div class="card"><div class="cardHeader" style="background:url(' + storageinitAry[e].Img + ')"><div class="likeBtn" id="likeBtn"  ><div class="heart" data-num="' + e + '" style="background-color:red";></div></div><h3>' + storageinitAry[e].Name + '</h3></div><div class="cardBody"><li><img src="../../img/icon/clock.svg" class="svg">' + storageinitAry[e].Opentime + '</li><li><img src="../../img/icon/location.svg" class="svg">' + storageinitAry[e].Add + '</li><li><img src="../../img/icon/phone.svg" class="svg">' + storageinitAry[e].Tel + '</li></div></div>';
     }
     list.innerHTML = content;
     title.innerHTML = '收藏景點';
