@@ -1,28 +1,31 @@
 var Kaodata = [];
+var loading = document.getElementById('loading');
 
 function getData() {
-    return new Promise(function (resolve, reject) {
-        var data = new XMLHttpRequest();
-        data.open('get', 'https://api.kcg.gov.tw/api/service/get/9c8e1450-e833-499c-8320-29b36b7ace5c', true);
-        data.send();
-        data.onreadystatechange = function () {
-            if (data.readyState === 4 && data.status === 200) {
-                var response = JSON.parse(data.responseText);
-                var filterContent = response.data.XML_Head.Infos.Info;
-                for (let i = 0; i < filterContent.length; i++) {
-                    Kaodata.push(filterContent[i]);
-                };
-                resolve(Kaodata);
-            }
+  loading.style.display = 'block'; 
+  return new Promise(function (resolve, reject) {
+    var data = new XMLHttpRequest();
+    data.open('get', 'https://api.kcg.gov.tw/api/service/get/9c8e1450-e833-499c-8320-29b36b7ace5c', true);
+    data.send();
+    data.onreadystatechange = function () {
+      if (data.readyState === 4 && data.status === 200) {
+        var response = JSON.parse(data.responseText);
+        var filterContent = response.data.XML_Head.Infos.Info;
+        for (let i = 0; i < filterContent.length; i++) {
+          Kaodata.push(filterContent[i]);
         };
-    });
+        loading.style.display = 'none'; 
+        resolve(Kaodata);
+      }
+    };
+  });
 }
 
-
 getData().then(function (Kaodata) {
-    // 在這裡呼叫您的 init() 函數
-    init();
+  // 在這裡呼叫您的 init() 函數
+  init();
 });
+
 
 const list = document.querySelector('.list');
 const selectArea = document.getElementById('selectArea');
